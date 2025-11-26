@@ -1,0 +1,29 @@
+@model List<ProductApp.Models.Product>
+
+<h1>Products</h1>
+
+<a href="/Products/Create" class="btn btn-primary">Add Product</a>
+
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var p in Model)
+        {
+            <tr>
+                <td>@p.Id</td>
+                <td>@p.Name</td>
+                <td>@p.Price</td>
+                <td>
+                    <a href="/Products/Delete?id=@p.Id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
